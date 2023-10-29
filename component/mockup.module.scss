@@ -1,0 +1,29 @@
+
+
+.mockup {
+    position: relative;
+    
+    width: 600px;
+    height: 936px;
+
+
+    > img {
+        &:first-child {
+            position: absolute;
+            width: 57%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &:nth-child(2) {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

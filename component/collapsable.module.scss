@@ -1,0 +1,59 @@
+.collapsable {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border-radius: 12px;
+    background-color: rgb(var(--callout-rgb));
+
+    cursor: pointer;
+
+    > div.title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+        > h5 {
+            font-size: 18px;
+            font-weight: 500;
+            color: rgb(var(--foreground-rgb));
+
+            &:first-child {
+                width: 90px;
+                margin-right: 10px;
+            }
+
+            &:nth-child(2) {
+                flex-grow: 1;
+            }
+        }
+
+        > svg {
+
+            transition: transform 0.2s ease-in-out;
+
+            &.up {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    > div.content {
+
+        overflow: hidden;
+
+        >p {
+            padding-top: 15px;
+
+            color: rgb(var(--foreground-light-rgb));
+            font-size: 16px;
+            font-weight: 500;
+
+            > span {
+                color: var(--highlight-rgb);
+            }
+        }
+    }
+}

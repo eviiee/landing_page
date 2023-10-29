@@ -1,0 +1,146 @@
+.title_section {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.body_section {
+  width: 100%;
+  background-color: rgb(var(--background-white-rgb));
+
+  padding: 150px 0;
+
+  &.grey {
+    background-color: rgb(var(--background-shade-rgb));
+  }
+}
+
+.reviewContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  >.reviewCard {
+    background-color: rgb(var(--background-white-rgb));
+    border-radius: 20px;
+    padding: 30px;
+
+    grid-column: span var(--col);
+    grid-row: span var(--row);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.dailyDajeong {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  position: relative;
+
+  height: 1250px;
+  
+  > .mockupContainer {
+
+    > div:first-child {
+      position: absolute;
+      top: 0;
+      right: -104px;
+      
+    }
+
+    > div:last-child {
+      position: absolute;
+      bottom: 0;
+      left: -104px;
+    }
+  }
+
+  > p {
+    position: absolute;
+    right: 30px;
+    bottom: 166px;
+  }
+}
+
+.missionType {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  >img {
+    width: 50%;
+  }
+
+  >div {
+    width: 50%;
+    padding-left: 60px;
+
+    >h4 {
+      >span {
+        >img {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  > .feature {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 30px;
+    border-radius: 20px;
+
+    > h3, p {
+      color: rgb(var(--background-white-rgb));
+    }
+
+    &.light {
+      > h3, p {
+        color: rgb(var(--foreground-rgb));
+      }
+    }
+
+    grid-row: span var(--row);
+    grid-column: span var(--col);
+  }
+}
+
+.dajeongMember {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > img {
+    height: 220px;
+    width: 220px;
+    border-radius: 220px;
+
+    object-fit: cover;
+
+    margin-bottom: 20px;
+  }
+}
+

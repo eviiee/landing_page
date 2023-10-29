@@ -1,0 +1,28 @@
+.cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 12px 18px;
+    border-radius: 12px;
+
+    background-color: rgba(var(--background-dark-rgb), 0.8);
+    &:hover {
+        background-color: rgba(var(--background-dark-rgb), 0.9);
+    }
+
+    cursor: pointer;
+
+    > img {
+        height: 22px;
+    }
+
+    > h4 {
+        color: rgb(var(--background-white-rgb));
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+}

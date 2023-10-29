@@ -1,0 +1,30 @@
+.navigator {
+
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+    padding: 15px;
+  
+    background-color: rgba(var(--foreground-rgb),0.2);
+    border-radius: 99px;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    > img {
+      width: 20px;
+      height: 20px;
+      opacity: 0.5;
+  
+      cursor: pointer;
+  
+      &:first-child {
+        transform: rotate(180deg);
+      }
+  
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
