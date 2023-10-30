@@ -1,9 +1,16 @@
+'use client';
 import Image from 'next/image'
 import styles from './page.module.scss'
 import Collapsable from '../../component/collapsable'
 import { appStoreCTA, googlePlayCTA } from '../../component/cta'
 import Mockup from '../../component/mockup'
 import Navigator from '../../component/navigator'
+import Underline from '../../component/animation/underline'
+import Highlight from '../../component/animation/highlight';
+import { ReactNode } from 'react';
+import Emphasize from '../../component/animation/emphasize';
+import Fade from '../../component/animation/fade';
+import Slide from '../../component/animation/slide';
 
 
 export default function Home() {
@@ -27,7 +34,7 @@ export default function Home() {
 function LandingPageTitle({ }) {
   return <section className={styles.title_section}>
     <div className="wrapper vFlex jc ac" style={gapStyle(50)}>
-      <h1 className='tc'>가족과 함께 하루 5분,<br />우리 가족 다정한 대화의 시작</h1>
+      <h1 className='tc'>가족과 함께 하루 5분,<br />우리 가족 <Highlight delay={1} color='#ffc537'>다정한 대화</Highlight>의 시작</h1>
       <div className="hFlex">
         {appStoreCTA()}
         {googlePlayCTA()}
@@ -53,18 +60,14 @@ function HookingSection() {
   return <LandingPageSection>
     <div className="vFlex" style={gapStyle(20)}>
       <img src="https://em-content.zobj.net/source/apple/354/thinking-face_1f914.png" alt="wonderingFace" width={70} height={70} />
-      <h2>나는 <span className="highlight">우리 가족</span>에 대해<br className='mobile' /> 얼마나 알고 있을까?</h2>
+      <h2>나는 <Highlight delay={0.5} color='#ff5353'>우리 가족</Highlight>에 대해<br className='mobile' /> 얼마나 알고 있을까?</h2>
       <p className="tc">부모님의 어릴적 꿈
-        <span className="slideappear">
-          <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Astronaut.png" alt="dreaming emoji" width={30} height={30} />
-        </span>을,
-        자녀가 요즘 즐겨 듣는 곡
-        <span className="slideappear">
-          <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Musical%20Notes.png" alt="headphone emoji" width={30} height={30} />
-        </span>
+        <Slide delay={1.5} size={30} href='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Astronaut.png' />
+        을, 자녀가 요즘 즐겨 듣는 곡
+        <Slide delay={2.5} size={30} href='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Musical%20Notes.png' />
         을, 알고 계신가요?<br />
         다정은 서로에 대한 이해가 화목한 가정으로의 첫 걸음이라고 믿고 있어요.<br />
-        다정에서 나에 대해 말해주고, <span className="underline">가족에 대해 들어보세요!</span>
+        다정에서 나에 대해 말해주고, <Underline delay={3.5} color={'#ec694e'}>가족에 대해 들어보세요!</Underline>
       </p>
     </div>
   </LandingPageSection>
@@ -82,28 +85,28 @@ function ReviewSection() {
       <div className={styles.reviewContainer}>
         <ReviewCard
           title='소소한 이야깃거리가 생겨요'
-          content='맘으로는 연락 자주 해야지, 대화 많이 해야지 하면서도 성격상 특별한 일이 없으면 일상적인 대화로는 무슨 얘기를 해야 하는지 조금 어려워하는 편인데 하루에 하나씩 소소하게 이야깃거리를 줘서 좋았어요. 꾸준히 잠깐씩이라도 연락하게 되니까 조금이나마 가족들과 친해진 기분이 들어서 좋습니다!'
+          content={<span>맘으로는 연락 자주 해야지, 대화 많이 해야지 하면서도 성격상 특별한 일이 없으면 일상적인 대화로는 무슨 얘기를 해야 하는지 조금 어려워하는 편인데 하루에 하나씩 소소하게 이야깃거리를 줘서 좋았어요. 꾸준히 잠깐씩이라도 연락하게 되니까 조금이나마 <Emphasize delay={1}>가족들과 친해진 기분</Emphasize>이 들어서 좋습니다!</span>}
           id='review0'
           row={1}
           column={1}
         />
         <ReviewCard
           title='단톡방에서 말이 많아졌어요 🤣'
-          content='테스터로 한 달 간 다정을 사용해봤습니다, 다정을 신청한 이유는 저는 자취, 동생은 기숙사로 다들 집에 갈 시간이 없고 가족들이랑 이야기를 나눌 기회가 없어서 억지로라도 해보자라는 마음으로 시작하게 됐는데, 결과는 대성공입니다. 남자친구나 친구들이 뭘 좋아하는 지는 알고 있었지만 엄마아빠가 뭘 좋아하시는 지는 모르고 있었다는 것도 알게 됐고, 엄마아빠는 저와 같은 나이일 때 어떤 생각을 하셨었는 지도 알게 되었어요, 다정에서 뿐만 아니라 저희 단톡방 자체가 굉장히 말이 많아지고 화목해졌습니다. 4주 간 테스트가 진행됐다는 것에 굉장히 아쉽고 정식 출시만을 기다리고 있네용,,, 정말 이런 서비스 만들어주셔서 감사하고 많은 가족들이 꼭 써봤으면 좋겠습니다'
+          content={<span>테스터로 한 달 간 다정을 사용해봤습니다, 다정을 신청한 이유는 저는 자취, 동생은 기숙사로 다들 집에 갈 시간이 없고 가족들이랑 이야기를 나눌 기회가 없어서 억지로라도 해보자라는 마음으로 시작하게 됐는데, 결과는 대성공입니다.<br className='desktop' /><br className='desktop' />남자친구나 친구들이 뭘 좋아하는 지는 알고 있었지만 엄마아빠가 뭘 좋아하시는 지는 모르고 있었다는 것도 알게 됐고, 엄마아빠는 저와 같은 나이일 때 어떤 생각을 하셨었는 지도 알게 되었어요, 다정에서 뿐만 아니라 저희 단톡방 자체가 굉장히 말이 많아지고 화목해졌습니다.<br className='desktop' /><br className='desktop' />4주 간 테스트가 진행됐다는 것에 굉장히 아쉽고 정식 출시만을 기다리고 있네용,,, 정말 이런 서비스 만들어주셔서 감사하고 <Emphasize delay={1}>많은 가족들이 꼭 써봤으면</Emphasize> 좋겠습니다</span>}
           id='review1'
           row={2}
           column={1}
         />
         <ReviewCard
           title='가족들의 생각에 대해 알게 됐어요'
-          content='어느 날 동생이 가족에게 다정을 사용하자고 했을 때는 이걸 왜 해야 하지 싶었습니다. 매일 미션에 답변해야 하는 것이 귀찮았고, 다정이 가족을 화목하게 만들어줄 수 있을 거라는 효과에 대해서도 의문이 들었기 떄문입니다. 그래서 저는 초반에는 잘 사용하지 않았습니다. 그런데 부모님과 동생은 꾸준히 미션에 참여했고, 그 결과 가족 간 소통이 늘어난 게 보였습니다. 어느 순간부터는 저도 열심히 다정을 사용하게 됐고, 덕분에 지금까지는 잘 몰랐던 가족의 생각, 취향 등에 대해 알 수 있게 돼 매우 좋았습니다. 참여를 열심히 할수록 다정 포인트가 쌓이는데, 저희는 포인트를 키링과 교환했습니다. 퀄리티도 좋고 귀여워서 매우 만족스러워 가방에 달고 다닙니다. 테스트가 4주밖에 진행이 되지 않았던 점이 다정의 유일한 단점(?)이었던 것 같습니다. 정식 서비스가 되는 날만 기다리고 있습니다. 좋은 서비스를 제공해주셔서 감사하고 화이팅하세요!'
+          content={<span>어느 날 동생이 가족에게 다정을 사용하자고 했을 때는 이걸 왜 해야 하지 싶었습니다. 매일 미션에 답변해야 하는 것이 귀찮았고, 다정이 가족을 화목하게 만들어줄 수 있을 거라는 효과에 대해서도 의문이 들었기 때문입니다. 그래서 저는 초반에는 잘 사용하지 않았습니다.<br className='desktop' /><br className='desktop' />그런데 부모님과 동생은 꾸준히 미션에 참여했고, 그 결과 가족 간 소통이 늘어난 게 보였습니다. 어느 순간부터는 저도 열심히 다정을 사용하게 됐고, 덕분에 지금까지는 <Emphasize delay={1.5}>잘 몰랐던 가족의 생각, 취향</Emphasize> 등에 대해 알 수 있게 돼 매우 좋았습니다.<br className='desktop' /><br className='desktop' />참여를 열심히 할수록 다정 포인트가 쌓이는데, 저희는 포인트를 키링과 교환했습니다. 퀄리티도 좋고 귀여워서 매우 만족스러워 가방에 달고 다닙니다. 좋은 서비스를 제공해주셔서 감사하고 화이팅하세요!</span>}
           id='review2'
           row={2}
           column={1}
         />
         <ReviewCard
           title='색다른 대화를 할 수 있었어요'
-          content='사실 저는 부모님들과 대화가 적지 않은 편이라 별다른 기대 없이 시작했었는데, 서비스를 이용하면서 부모님이 좋아하는 게 뭔지, 요즘 무슨 생각을 하시는 지 등등 많은 것을 알게 되어 좋았습니다! 저희 가족 카톡방에서 이제는 단순히 오늘 밥 먹었냐 등의 대화를 넘어서서, 다정에서 던져준 대화 주제를 바탕으로 더 많은 이야기를 나누고 있어요ㅎㅎ 좋은 기회 제공해주셔서 감사합니다!'
+          content={<span>사실 저는 부모님들과 대화가 적지 않은 편이라 별다른 기대 없이 시작했었는데, 서비스를 이용하면서 <Emphasize delay={2}>부모님이 좋아하는 게 뭔지, 요즘 무슨 생각을 하시는지</Emphasize> 등등 많은 것을 알게 되어 좋았습니다! 저희 가족 카톡방에서 이제는 단순히 오늘 밥 먹었냐 등의 대화를 넘어서서, 다정에서 던져준 대화 주제를 바탕으로 더 많은 이야기를 나누고 있어요ㅎㅎ 좋은 기회 제공해주셔서 감사합니다!</span>}
           id='review3'
           row={1}
           column={1}
@@ -121,7 +124,7 @@ function ReviewCard({
   column,
 }: {
   title: string,
-  content: string,
+  content: ReactNode,
   id: string,
   row: number,
   column: number,
@@ -148,14 +151,14 @@ function DailyDajeong() {
       <div className={styles.dailyDajeong}>
         <div className="vFlex as" style={gapStyle(30)}>
           <h4>다정한 쪽지</h4>
-          <h2>하루 5분,<br />가족과 함께<br />다정한 일문일답</h2>
+          <h2>하루 5분,<br />가족과 함께<br />다정한 <Highlight delay={0} color='#24bd57'>일문일답</Highlight></h2>
         </div>
         <div className={styles.mockupContainer}>
           <Mockup img='/assets/image/Screen01.jpg' />
           <Mockup img='/assets/image/Screen02.jpg' />
         </div>
         <p>
-          가족들과 함께 다정의 질문에 답해보세요.<br />
+          가족들과 함께 <Underline delay={0.75} color='#ff5353'>다정의 질문</Underline>에 답해보세요.<br />
           미처 몰랐던 가족들의 취향이나 생각을<br />
           알아보고 다정 포인트도 얻을 수 있어요.
         </p>
@@ -188,7 +191,10 @@ function MissionType({
   return (
     <div className={`${styles.missionType} ${reverse ? styles.reverse : ''}`}>
       <div className='vFlex as'>
-        <h4 style={{ color: accentColor }}>{caption} <span><img src={icon} alt="" /></span></h4>
+        <h4 style={{ color: accentColor }}>
+          {caption}
+          <Slide delay={0.6} size={40} href={icon} />
+        </h4>
         <h3>{titles}</h3>
         <p>{comments}</p>
       </div>
@@ -204,7 +210,7 @@ function DailyMissions() {
       <div className="vFlex as">
         <div className="vFlex as" style={gapStyle(30)}>
           <h4>데일리 미션</h4>
-          <h2>다정이 정성스레 준비한<br />따뜻하고 재치있는<br />다양한 미션들</h2>
+          <h2>다정이 정성스레 준비한<br />따뜻하고 재치있는<br /><Highlight delay={0.5} color='#5190ff'>다양한 미션</Highlight>들</h2>
         </div>
         <MissionType
           caption='추억필름'
@@ -245,8 +251,16 @@ function DailyMissions() {
 function DajeongPoint() {
   return (
     <LandingPageSection>
-      <div className="vFlex">
-        다정 포인트 관련
+      <div className={styles.dajeong_point_wrap}>
+        <div className="vFlex as js" style={gapStyle(30)}>
+          <h4>다정 포인트</h4>
+          <h2>답변만 해도<br />차곡차곡 쌓이는<br /><Highlight delay={0.5} color='#33e675'>다정 포인트</Highlight></h2>
+        </div>
+        <Mockup img='/assets/image/Screen02.jpg' />
+        <div className="vFlex as je" style={gapStyle(40)}>
+          <h2>깜짝 <Fade delay={0.5}>생일선물,</Fade><br />다함께 <Fade delay={1}>외식,</Fade><br />아니면 <Fade delay={1.5}>여행?</Fade></h2>
+          <p>가족들과 다정한 시간을 보내면 쌓은 다정 포인트는<br />다정 스토어에서 사용할 수 있어요.<br />어떤 곳에 사용할 수 있을지 기대되지 않나요?</p>
+        </div>
       </div>
     </LandingPageSection>
   )
@@ -286,7 +300,7 @@ function Features() {
   return (
     <LandingPageSection grey>
       <div className="vFlex" style={gapStyle(60)}>
-        <h2 className='tc'>다정에서 할 수 있는<br />다양한 일들</h2>
+        <h2 className='tc'>다정에서 할 수 있는<br /><Underline delay={0.75} color='#ff5353'>다양한 일들</Underline></h2>
         <div className={styles.featuresGrid}>
           <Feature
             title='다정한 쪽지 / 스페셜 미션'
@@ -374,12 +388,12 @@ function DajeongTeam() {
   return (
     <LandingPageSection grey>
       <div className="vFlex ast" style={gapStyle(80)} id='team'>
-        <div className="vFlex">
-          <h2>다정을 만드는 사람들 <span><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Woman%20Technologist.png" alt="" /></span></h2>
+        <div className="vFlex" style={gapStyle(30)}>
+          <h2 className={styles.teamTitle}><Underline delay={0.5} color='#ff5353'>다정을 만드는 사람들</Underline> <Slide delay={1.1} href='https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Woman%20Technologist.png' size={70} /></h2>
           <p className='tc'>
-          팀원소개글 어쩌구저쩌구 블라블라 아래는 채널톡 카피<br/>
-          만드는 사람이 곧 고객이 되어야 그 비즈니스가 성장할 수 있다고 믿어요.<br/>
-          만든 걸 쓰고, 쓸 걸 만드는 채널팀을 만나보세요.
+            팀원소개글 어쩌구저쩌구 블라블라 아래는 채널톡 카피<br />
+            만드는 사람이 곧 고객이 되어야 그 비즈니스가 성장할 수 있다고 믿어요.<br />
+            만든 걸 쓰고, 쓸 걸 만드는 채널팀을 만나보세요.
           </p>
         </div>
         <div className="hFlex ja" style={gapStyle(20)}>
@@ -446,17 +460,18 @@ function FAQSection() {
 function Footer() {
   return (
     <LandingPageSection grey>
-      <div className="vFlex">
+      <div className={styles.footer}>
         <h5>고객센터</h5>
         <p><span>전화</span>010-1234-5678</p>
         <p><span>이메일</span>contactdajeong@gmail.com</p>
         <p className='tc'>
-          다정은 더 다정한 매일을 만들어<br/>
-          더 다정한 가족으로 나아가고,<br/>
-          더 다정한 세상이 되기를 소망합니다.
+          더 다정한 순간을 모아<br />
+          더 다정한 매일을 만들고,<br />
+          더 다정한 세상을 소망합니다.
         </p>
         <div className="hFlex">
           <a href="/">이용약관</a>
+          |
           <a href="/">개인정보 처리방침</a>
         </div>
       </div>

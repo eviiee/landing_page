@@ -4,6 +4,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  background-image: url('/assets/image/title_background.jpg');
+  background-size: cover;
+  background-position: top;
+  object-fit: contain;
+
+  &::before {
+
+    pointer-events: none;
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(var(--background-white-rgb), 0.4);
+  
+  }
 }
 
 .body_section {
@@ -90,11 +111,20 @@
     >h4 {
       >span {
         >img {
-          width: 50px;
-          height: 50px;
+          margin-left: 10px;
         }
       }
     }
+  }
+}
+
+.dajeong_point_wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > div:nth-child(2) {
+    grid-row: span 2;
+    transform: translateX(60px);
   }
 }
 
@@ -127,6 +157,12 @@
   }
 }
 
+.teamTitle {
+  > span > img {
+    transform: translateY(16px);
+  }
+}
+
 .dajeongMember {
 
   display: flex;
@@ -144,3 +180,35 @@
   }
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  > h5 {
+    margin-bottom: 10px;
+  }
+
+  > p {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  > p:nth-child(4) {
+    margin-top: 30px;
+  }
+
+  > div {
+    margin-top: 30px;
+    color: rgb(var(--foreground-rgb));
+
+    > a {
+      opacity: 0.6;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+}
