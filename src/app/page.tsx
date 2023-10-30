@@ -435,12 +435,12 @@ function FAQSection() {
         <div className="vFlex ast" style={gapStyle(20)}>
           <Collapsable category='사용 방법' categoryColor='#18a5a5' title='다정은 어디서 쓸 수 있나요?'>
             <p>
-              다정은 아이폰과 갤럭시 등의 안드로이드 기기에서 사용할 수 있어요. 아이폰이라면 앱스토어에서, 안드로이드라면 구글 플레이스토어에서 다운받으실 수 있어요.
+              다정은 아이폰과 갤럭시 등의 안드로이드 기기에서 사용할 수 있어요. 아이폰이라면 <span>앱스토어</span>에서, 안드로이드라면 <span>구글 플레이스토어</span>에서 다운받으실 수 있어요.
             </p>
           </Collapsable>
           <Collapsable category='사용 방법' categoryColor='#18a5a5' title='다정 서비스는 무료인가요?'>
             <p>
-              현재 다정의 모든 기능들은 무료로 사용하실 수 있어요. 다만, 추후에 추가될 유료 기능들이 있을 수 있으니 참고해주세요.
+              현재 다정의 모든 기능들은 <span>무료</span>로 사용하실 수 있어요. 다만, 추후에 추가될 유료 기능들이 있을 수 있으니 참고해주세요.
             </p>
           </Collapsable>
           <Collapsable category='FAQ' categoryColor='#3182f6' title='질문을 여기에 적고'>
