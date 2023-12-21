@@ -319,7 +319,7 @@ function Features() {
           />
           <Feature
             title='아카이빙'
-            description='다정이 제공하는 질문에 답해보고, 서로의 답변을 확인해보세요! 서로를 더 깊이 알아가는 시간을 가질 수 있을 거예요.'
+            description='매일 작성해주신 답변들을 기록해드릴게요. 우리 가족이 언제든 열어볼 수 있는 다이어리가 완성될 거예요!'
             color='#70f3cb'
             row={2}
             column={1}
@@ -327,14 +327,14 @@ function Features() {
           />
           <Feature
             title='컨텐츠 공유'
-            description='다정이 제공하는 질문에 답해보고, 서로의 답변을 확인해보세요! 서로를 더 깊이 알아가는 시간을 가질 수 있을 거예요.'
+            description='버튼 하나로 오늘의 뉴스, 날씨, 흥미로운 글 등을 공유해보세요! 다정이 매일매일의 대화 소재를 제공해드려요.'
             color='#0bc2d4'
             row={1}
             column={2}
           />
           <Feature
             title='다정 알리미'
-            description='다정이 제공하는 질문에 답해보고, 서로의 답변을 확인해보세요! 서로를 더 깊이 알아가는 시간을 가질 수 있을 거예요.'
+            description='바쁜 일상 속 중요한 가족 일정을 잊어버리지 않도록, 다정 알리미가 가족 일정을 미리 알려드려요!'
             color='#ff5c56'
             row={1}
             column={2}
